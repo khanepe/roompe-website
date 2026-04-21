@@ -24,20 +24,20 @@ export function Navbar() {
         className="max-w-6xl mx-auto bg-clay-base/50 backdrop-blur-md rounded-clay shadow-clay border border-white/50 p-4 flex justify-between items-center"
       >
         <Link href="/">
-          <span className="text-2xl font-bold text-clay-textMain tracking-tight">RoomPe<span className="text-clay-accent3">.</span></span>
+          <img src="https://res.cloudinary.com/dvqu8jllv/image/upload/v1776772997/Untitled_design_1_lciep9.png" alt="RoomPe Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 items-center">
           {links.map((link) => (
-            <Link key={link.name} href={link.href} className="text-clay-textMain font-medium hover:text-clay-accent3 transition-colors">
+            <Link key={link.name} href={link.href} className="text-clay-navy font-semibold hover:text-clay-teal transition-colors">
               {link.name}
             </Link>
           ))}
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-clay-accent3 text-white px-6 py-2 rounded-clay-sm shadow-clay-btn font-semibold hover:bg-opacity-90 transition-all"
+            className="bg-clay-orange text-white px-6 py-2 rounded-clay-sm shadow-clay-btn font-bold hover:bg-opacity-90 transition-all"
           >
             Partner With Us
           </motion.button>
@@ -61,12 +61,12 @@ export function Navbar() {
               key={link.name} 
               href={link.href} 
               onClick={() => setIsOpen(false)}
-              className="text-clay-textMain font-medium text-lg border-b border-white/50 pb-2"
+              className="text-clay-navy font-semibold text-lg border-b border-white/50 pb-2 hover:text-clay-teal transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          <button className="bg-clay-accent3 text-white px-6 py-3 rounded-clay-sm shadow-clay-btn font-semibold mt-4">
+          <button className="bg-clay-orange text-white px-6 py-3 rounded-clay-sm shadow-clay-btn font-bold mt-4">
             Partner With Us
           </button>
         </motion.div>

@@ -12,19 +12,21 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         clay: {
-          base: "#E8EEF2",
+          base: "var(--background)", // dynamically use globals.css background
           card: "#FFFFFF",
-          accent1: "#9FA8DA",
-          accent2: "#F48FB1",
-          accent3: "#81D4FA",
-          textMain: "#37474F",
-          textMuted: "#78909C"
+          navy: "#13333F",
+          teal: "#3AA696",
+          ochre: "#E6BE6D",
+          orange: "#FF6B35",
+          indigo: "#6366F1",
+          textMain: "#13333F", // Deep Charcoal/Navy
+          textMuted: "#3AA696" // Muted Teal or we can use a lighter navy
         }
       },
       boxShadow: {
-        'clay': '10px 10px 30px rgba(0,0,0,0.06), -10px -10px 30px rgba(255,255,255,0.9), inset -5px -5px 15px rgba(0,0,0,0.02), inset 5px 5px 15px rgba(255,255,255,0.7)',
-        'clay-btn': '5px 5px 15px rgba(0,0,0,0.06), -5px -5px 15px rgba(255,255,255,0.9), inset -2px -2px 6px rgba(0,0,0,0.02), inset 2px 2px 6px rgba(255,255,255,0.7)',
-        'clay-active': 'inset 6px 6px 15px rgba(0,0,0,0.06), inset -6px -6px 15px rgba(255,255,255,0.9)'
+        'clay': '10px 10px 30px rgba(19, 51, 63, 0.08), -10px -10px 30px rgba(255,255,255,0.4), inset -5px -5px 15px rgba(19, 51, 63, 0.03), inset 5px 5px 15px rgba(255,255,255,0.3)',
+        'clay-btn': '5px 5px 15px rgba(19, 51, 63, 0.08), -5px -5px 15px rgba(255,255,255,0.4), inset -2px -2px 6px rgba(19, 51, 63, 0.03), inset 2px 2px 6px rgba(255,255,255,0.3)',
+        'clay-active': 'inset 6px 6px 15px rgba(19, 51, 63, 0.08), inset -6px -6px 15px rgba(255,255,255,0.4)'
       },
       borderRadius: {
         'clay': '2rem',
