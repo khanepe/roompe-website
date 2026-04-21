@@ -22,11 +22,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 bg-[#F8FAFC]">
+    <main className="min-h-screen pt-24 pb-12 bg-[#F8FAFC]">
       <Navbar />
 
       {/* Structured Enterprise Hero Section */}
-      <section className="relative max-w-7xl mx-auto flex flex-col lg:flex-row justify-center items-center mt-12 mb-24 overflow-hidden rounded-xl border border-estate-border bg-white p-8 lg:p-16">
+      <section className="relative w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row justify-center items-center mt-12 mb-24 overflow-hidden rounded-xl border border-estate-border bg-white p-8 lg:p-16">
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
           {/* Left: Text & CTAs */}
           <motion.div variants={staggerContainer} initial="hidden" animate="show" className="text-left lg:col-span-6">
@@ -34,8 +34,7 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-estate-mint mr-2"></span> Enterprise Proptech
             </motion.div>
             <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-estate-navy leading-tight mb-6 tracking-tight">
-              Elevating Student <br className="hidden md:block"/> Living. <br className="hidden md:block"/>
-              Redefining Operations.
+              Elevating <span className="text-estate-mint">Student <br className="hidden md:block"/> Living.</span> <br className="hidden md:block"/> Redefining <span className="text-estate-mint">Operations.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-lg text-estate-muted max-w-xl mb-10 leading-relaxed">
               Western India&apos;s premier B2B student housing partner. We transform hostel infrastructure into seamless, tech-enabled experiences.
@@ -125,11 +124,10 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section id="about" className="max-w-7xl mx-auto mb-24">
+      <motion.section id="about" initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 mb-24">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-estate-navy">
-            Trusted by top institutions. <br className="hidden sm:block"/>
-            Managing 300+ beds across 5 campuses.
+            Trusted by <span className="text-estate-mint">top institutions</span>. <br className="hidden sm:block"/> Managing <span className="text-estate-mint">300+ beds</span> across <span className="text-estate-mint">5 campuses</span>.
           </h2>
         </div>
         <motion.div 
@@ -141,21 +139,21 @@ export default function Home() {
             { value: "5", label: "Campuses Live", icon: GraduationCap },
             { value: "$1M", label: "Bootstrapped ARR", icon: Building2 },
           ].map((stat, i) => (
-            <motion.div key={i} variants={fadeUp} className="bg-white border border-estate-border rounded-xl p-8 flex flex-col items-center justify-center text-center">
+            <motion.div key={i} variants={fadeUp} whileHover={{ y: -8 }} className="bg-white border border-estate-border rounded-xl p-8 flex flex-col items-center justify-center text-center hover:border-estate-mint transition-colors cursor-pointer">
               <div className="bg-[#F8FAFC] p-4 rounded-lg mb-6 border border-estate-border">
-                <stat.icon className="w-6 h-6 text-estate-navy" />
+                <stat.icon className="w-6 h-6 text-estate-mint" />
               </div>
               <h3 className="text-4xl font-extrabold text-estate-navy mb-2">{stat.value}</h3>
               <p className="text-estate-muted font-semibold uppercase tracking-wider text-xs">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Services Section */}
-      <section id="services" className="max-w-7xl mx-auto mb-24">
+      <motion.section id="services" initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 mb-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-estate-navy mb-4">Our Operating Models</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-estate-navy mb-4">Our <span className="text-estate-mint">Operating Models</span></h2>
           <p className="text-estate-muted max-w-2xl mx-auto text-lg">We offer comprehensive end-to-end B2B solutions tailored for educational institutions.</p>
         </div>
 
@@ -163,8 +161,8 @@ export default function Home() {
           initial="hidden" whileInView="show" viewport={{ once: true }} variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
         >
-          <motion.div variants={fadeUp} className="bg-white rounded-xl border border-estate-border p-8 md:p-10 flex flex-col h-full">
-            <h3 className="text-2xl font-bold text-estate-navy mb-4">Turnkey Asset Management</h3>
+          <motion.div variants={fadeUp} whileHover={{ y: -8 }} className="bg-white rounded-xl border border-estate-border p-8 md:p-10 flex flex-col h-full hover:border-estate-mint transition-colors cursor-pointer">
+            <h3 className="text-2xl font-bold text-estate-navy mb-4"><span className="text-estate-mint">Turnkey</span> Asset Management</h3>
             <p className="text-estate-muted mb-8 leading-relaxed flex-grow">
               We lease your hostel infrastructure, providing institutions with guaranteed, fixed rental yields. Zero operational headaches, premium maintenance, and a superior student experience.
             </p>
@@ -175,8 +173,8 @@ export default function Home() {
             </ul>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="bg-white rounded-xl border border-estate-border p-8 md:p-10 flex flex-col h-full">
-            <h3 className="text-2xl font-bold text-estate-navy mb-4">Operations Powered by RoomPe</h3>
+          <motion.div variants={fadeUp} whileHover={{ y: -8 }} className="bg-white rounded-xl border border-estate-border p-8 md:p-10 flex flex-col h-full hover:border-estate-mint transition-colors cursor-pointer">
+            <h3 className="text-2xl font-bold text-estate-navy mb-4">Operations Powered by <span className="text-estate-mint">RoomPe</span></h3>
             <p className="text-estate-muted mb-8 leading-relaxed flex-grow">
               Retain complete ownership while leveraging our proprietary technology, trained hospitality staff, and rigorous SOPs. We integrate seamlessly into your campus to elevate daily management.
             </p>
@@ -187,32 +185,32 @@ export default function Home() {
             </ul>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Tech-Enabled Housing */}
-      <section className="max-w-7xl mx-auto mb-24">
+      <motion.section initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 mb-24">
         <div className="bg-white rounded-xl border border-estate-border p-8 md:p-16">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              <div>
                <h2 className="text-3xl md:text-4xl font-extrabold text-estate-navy mb-6">
-                 Driven by Technology. <br/>Designed for Comfort.
+                 Driven by <span className="text-estate-mint">Technology</span>. <br/>Designed for <span className="text-estate-mint">Comfort</span>.
                </h2>
                <p className="text-estate-muted text-lg leading-relaxed mb-8">
                  The RoomPe App ecosystem brings full transparency to campus housing. From digital room allocations and automated laundry tracking to smart security and maintenance ticketing, we put campus control at your students&apos; fingertips.
                </p>
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+               <motion.div variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { title: "Digital Allocation", desc: "Seamless onboarding" },
                     { title: "Smart Ticketing", desc: "Quick resolutions" },
                     { title: "Automated Laundry", desc: "App-based tracking" },
                     { title: "Secure Access", desc: "Digital passes & logs" }
                   ].map((item, i) => (
-                    <div key={i} className="bg-[#F8FAFC] border border-estate-border p-5 rounded-lg">
+                    <motion.div key={i} whileHover={{ y: -8 }} variants={fadeUp} className="bg-[#F8FAFC] border border-estate-border hover:border-estate-mint transition-colors p-5 rounded-lg cursor-pointer">
                       <h4 className="font-bold text-estate-navy mb-1">{item.title}</h4>
                       <p className="text-sm text-estate-muted">{item.desc}</p>
-                    </div>
+                    </motion.div>
                   ))}
-               </div>
+               </motion.div>
              </div>
              
              {/* App UI Representation */}
@@ -248,15 +246,15 @@ export default function Home() {
              </div>
            </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section id="contact" className="max-w-4xl mx-auto text-center mb-12">
+      <motion.section id="contact" initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 text-center mb-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="bg-white rounded-xl border border-estate-border p-12 lg:p-16"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-estate-navy mb-6">Ready to upgrade your campus?</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-estate-navy mb-6">Ready to <span className="text-estate-mint">upgrade</span> your campus?</h2>
           <p className="text-estate-muted text-lg mb-10 max-w-xl mx-auto">
             Partner with RoomPe and transform your student housing into a premium, hassle-free enterprise operation.
           </p>
@@ -268,7 +266,7 @@ export default function Home() {
             Contact Sales
           </motion.button>
         </motion.div>
-      </section>
+      </motion.section>
 
       <Footer />
     </main>
