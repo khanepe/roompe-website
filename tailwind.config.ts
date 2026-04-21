@@ -22,9 +22,9 @@ const config: Config = {
         }
       },
       boxShadow: {
-        'clay': '10px 10px 20px rgba(0,0,0,0.05), -10px -10px 20px rgba(255,255,255,0.8), inset -5px -5px 10px rgba(0,0,0,0.03), inset 5px 5px 10px rgba(255,255,255,0.9)',
-        'clay-btn': '5px 5px 10px rgba(0,0,0,0.05), -5px -5px 10px rgba(255,255,255,0.8), inset -2px -2px 5px rgba(0,0,0,0.03), inset 2px 2px 5px rgba(255,255,255,0.9)',
-        'clay-active': 'inset 5px 5px 10px rgba(0,0,0,0.05), inset -5px -5px 10px rgba(255,255,255,0.8)'
+        'clay': '10px 10px 30px rgba(0,0,0,0.06), -10px -10px 30px rgba(255,255,255,0.9), inset -5px -5px 15px rgba(0,0,0,0.02), inset 5px 5px 15px rgba(255,255,255,0.7)',
+        'clay-btn': '5px 5px 15px rgba(0,0,0,0.06), -5px -5px 15px rgba(255,255,255,0.9), inset -2px -2px 6px rgba(0,0,0,0.02), inset 2px 2px 6px rgba(255,255,255,0.7)',
+        'clay-active': 'inset 6px 6px 15px rgba(0,0,0,0.06), inset -6px -6px 15px rgba(255,255,255,0.9)'
       },
       borderRadius: {
         'clay': '2rem',
