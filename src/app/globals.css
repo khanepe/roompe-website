@@ -4,7 +4,7 @@
 
 :root {
   --background: #F8FAFC;
-  --foreground: #13333F;
+  --foreground: #12323B;
 }
 
 body {
@@ -15,6 +15,6 @@ body {
 }
 
 ::selection {
-  background: #3AA696;
-  color: #FFFFFF;
+  background: #F1C46E;
+  color: #12323B;
 }
