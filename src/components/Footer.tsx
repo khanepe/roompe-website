@@ -2,37 +2,48 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-20 p-6 md:p-12">
-      <div className="max-w-6xl mx-auto bg-clay-base rounded-clay shadow-clay p-8 md:p-16 border border-white/50 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="col-span-1 md:col-span-2">
-          <h3 className="text-2xl font-bold text-clay-textMain mb-4">RoomPe<span className="text-clay-accent3">.</span></h3>
-          <p className="text-clay-textMuted leading-relaxed max-w-sm">
-            Let universities and academicians focus on studies and student activities, while we take care of all daily hostel management.
-          </p>
+    <footer className="mt-20 border-t border-estate-border bg-white pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="col-span-1 md:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <img src="https://res.cloudinary.com/dvqu8jllv/image/upload/v1776773778/roompe-logo_u4dpdy.png" alt="RoomPe Logo" className="h-12 w-auto" />
+            </Link>
+            <p className="text-estate-muted leading-relaxed max-w-sm">
+              Elevating student living. Simplifying campus operations. We transform hostel infrastructure into seamless, tech-enabled experiences.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="font-bold text-estate-navy mb-6">Company</h4>
+            <ul className="space-y-4">
+              <li><Link href="#about" className="text-estate-muted hover:text-estate-mint transition">About Us</Link></li>
+              <li><Link href="#services" className="text-estate-muted hover:text-estate-mint transition">Our Models</Link></li>
+              <li><Link href="#contact" className="text-estate-muted hover:text-estate-mint transition">Contact Sales</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-estate-navy mb-6">Key Markets</h4>
+            <ul className="space-y-4">
+              <li className="text-estate-muted">Ahmedabad</li>
+              <li className="text-estate-muted">Gandhinagar</li>
+              <li className="text-estate-muted">Rajkot</li>
+              <li className="text-estate-muted">Surat</li>
+              <li className="text-estate-muted">Vadodara</li>
+            </ul>
+          </div>
         </div>
         
-        <div>
-          <h4 className="font-semibold text-clay-textMain mb-4">Company</h4>
-          <ul className="space-y-2">
-            <li><Link href="#about" className="text-clay-textMuted hover:text-clay-accent3 transition">About Us</Link></li>
-            <li><Link href="#services" className="text-clay-textMuted hover:text-clay-accent3 transition">Services</Link></li>
-            <li><Link href="#contact" className="text-clay-textMuted hover:text-clay-accent3 transition">Contact</Link></li>
-          </ul>
+        <div className="border-t border-estate-border pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-estate-muted text-sm mb-4 md:mb-0">
+            &copy; {new Date().getFullYear()} RoomPe Pvt Ltd. All rights reserved.
+          </p>
+          <div className="flex space-x-6">
+            <Link href="#" className="text-estate-muted hover:text-estate-navy text-sm transition">Privacy Policy</Link>
+            <Link href="#" className="text-estate-muted hover:text-estate-navy text-sm transition">Terms of Service</Link>
+          </div>
         </div>
-
-        <div>
-          <h4 className="font-semibold text-clay-textMain mb-4">Campuses</h4>
-          <ul className="space-y-2">
-            <li className="text-clay-textMuted">Ahmedabad</li>
-            <li className="text-clay-textMuted">Gandhinagar</li>
-            <li className="text-clay-textMuted">Rajkot</li>
-            <li className="text-clay-textMuted">Surat</li>
-            <li className="text-clay-textMuted">Vadodara</li>
-          </ul>
-        </div>
-      </div>
-      <div className="text-center mt-8 text-clay-textMuted text-sm">
-        &copy; {new Date().getFullYear()} RoomPe. All rights reserved.
       </div>
     </footer>
   );

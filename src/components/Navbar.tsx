@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex-shrink-0 flex items-center">
-            <img src="https://res.cloudinary.com/dvqu8jllv/image/upload/v1776772997/Untitled_design_1_lciep9.png" alt="RoomPe Logo" className="h-10 w-auto" />
+            <img src="https://res.cloudinary.com/dvqu8jllv/image/upload/v1776773778/roompe-logo_u4dpdy.png" alt="RoomPe Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Links */}
