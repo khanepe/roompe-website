@@ -277,9 +277,9 @@ export default function Home() {
               variants={fadeUp}
               className="text-white mb-6 max-w-5xl"
               style={{
-                fontSize: "clamp(1.85rem, 6vw, 4.5rem)",
+                fontSize: "clamp(2.3rem, 6vw, 4.5rem)",
                 fontWeight: 800,
-                lineHeight: 1.06,
+                lineHeight: 1.3,
                 letterSpacing: "-0.025em",
               }}
             >
