@@ -42,7 +42,7 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
 /* ─── STAT CARD (light background) ──────────────────────────── */
 function StatCard({
   value, label, icon: Icon, accent,
-}: { value: string; label: string; icon: React.FC<{ className?: string }>; accent: string }) {
+}: { value: string; label: string; icon: React.FC<{ className?: string; style?: React.CSSProperties }>; accent: string }) {
   return (
     <motion.div
       variants={fadeUp}
@@ -119,7 +119,7 @@ function ServiceCard({
 /* ─── TECH FEATURE CARD (light section) ─────────────────────── */
 function TechCard({
   title, desc, icon: Icon, color,
-}: { title: string; desc: string; icon: React.FC<{ className?: string }>; color: string }) {
+}: { title: string; desc: string; icon: React.FC<{ className?: string; style?: React.CSSProperties }>; color: string }) {
   return (
     <motion.div
       variants={fadeUp}
