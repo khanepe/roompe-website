@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "RoomPe | Premium Student Housing Management",
-  description: "Redefining Student Housing & Management. We offer end-to-end B2B hostel management for universities and institutions.",
+  description: "Western India's premier B2B student housing partner. We transform hostel infrastructure into seamless, tech-enabled experiences for universities and institutions across Gujarat.",
+  keywords: ["student housing", "hostel management", "B2B proptech", "Gujarat", "RoomPe", "campus living"],
+  openGraph: {
+    title: "RoomPe | Premium Student Housing Management",
+    description: "Western India's premier B2B student housing partner for universities and institutions.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -15,8 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${jakarta.className} antialiased`}>{children}</body>
+    <html lang="en" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
+      <body className="antialiased bg-white text-[#12323B]" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

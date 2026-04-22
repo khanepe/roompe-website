@@ -1,73 +1,109 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Technology", href: "/#technology" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white border-b border-estate-border">
-      <div className="w-full px-6 md:px-12 lg:px-24">
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`fixed top-0 w-full z-50 bg-white transition-shadow duration-300 ${scrolled ? "shadow-[0_1px_12px_rgba(18,50,59,0.09)]" : "shadow-none border-b border-[#E2E8F0]"
+        }`}
+    >
+      <div className="container-wide">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex-shrink-0 flex items-center">
-            <img src="https://res.cloudinary.com/dvqu8jllv/image/upload/v1776773778/roompe-logo_u4dpdy.png" alt="RoomPe Logo" className="h-10 w-auto" />
+
+          {/* ── Logo ── */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="https://res.cloudinary.com/dvqu8jllv/image/upload/v1776773778/roompe-logo_u4dpdy.png"
+              alt="RoomPe"
+              width={140}
+              height={48}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex space-x-8 items-center">
-            {links.map((link) => (
-              <Link key={link.name} href={link.href} className="text-estate-navy text-sm font-semibold hover:text-estate-mint transition-colors">
-                {link.name}
+          {/* ── Desktop links ── */}
+          <div className="hidden md:flex items-center gap-7">
+            {links.map((l) => (
+              <Link key={l.name} href={l.href} className="nav-link font-medium">
+                {l.name}
               </Link>
             ))}
-            <motion.button 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-estate-gold text-estate-navy px-6 py-2.5 rounded-lg font-bold transition-all"
-            >
-              Partner With Us
-            </motion.button>
           </div>
 
-          {/* Mobile menu button */}
-          <button className="md:hidden text-estate-navy p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {/* ── CTA ── */}
+          <div className="hidden md:block">
+            <Link href="/contact" className="btn-gold text-sm px-6 py-2.5 rounded-lg">
+              Partner With Us
+            </Link>
+          </div>
+
+          {/* ── Mobile toggle ── */}
+          <button
+            onClick={() => setIsOpen((v) => !v)}
+            className="md:hidden p-2 text-[#718096] hover:text-[#12323B] transition-colors rounded-lg hover:bg-[#F8FAFC]"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div 
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-white border-b border-estate-border px-4 pt-2 pb-6 flex flex-col space-y-4"
-        >
-          {links.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href} 
-              onClick={() => setIsOpen(false)}
-              className="text-estate-navy font-semibold text-lg py-2 hover:text-estate-mint transition-colors"
+      {/* ── Mobile dropdown ── */}
+      <motion.div
+        initial={false}
+        animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
+        className="md:hidden overflow-hidden bg-white border-t border-[#E2E8F0]"
+      >
+        <div className="container-wide py-6 flex flex-col gap-1">
+          {links.map((l, i) => (
+            <motion.div
+              key={l.name}
+              initial={{ opacity: 0, x: -8 }}
+              animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -8 }}
+              transition={{ delay: i * 0.04 }}
             >
-              {link.name}
-            </Link>
+              <Link
+                href={l.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-3 text-[#718096] hover:text-[#12323B] font-medium text-base rounded-lg hover:bg-[#F8FAFC] transition-colors"
+              >
+                {l.name}
+              </Link>
+            </motion.div>
           ))}
-          <button className="bg-estate-gold text-estate-navy px-6 py-3 rounded-lg font-bold mt-4">
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="btn-gold mt-3 justify-center text-sm py-3"
+          >
             Partner With Us
-          </button>
-        </motion.div>
-      )}
-    </nav>
+          </Link>
+        </div>
+      </motion.div>
+    </motion.nav>
   );
 }
