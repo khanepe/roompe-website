@@ -146,8 +146,8 @@ export default function ContactPage() {
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
               {(
                 [
-                  { icon: Mail, label: "contact@roompe.co.in", href: "mailto:contact@roompe.co.in" },
-                  { icon: Phone, label: "+91 93282 27697", href: "tel:+919328227697" },
+                  { icon: Mail, label: "satya@roompe.co.in", href: "mailto:satya@roompe.co.in" },
+                  { icon: Phone, label: "+91 9328227697", href: "tel:+919328227697" },
                   { icon: MapPin, label: "Ahmedabad, Gujarat", href: "#" },
                 ] as { icon: React.ElementType; label: string; href: string }[]
               ).map(({ icon: Icon, label, href }) => (
@@ -193,7 +193,7 @@ export default function ContactPage() {
                 <h2 className="display-md mb-6">Get in touch</h2>
                 <div className="flex flex-col gap-5">
                   {[
-                    { icon: Mail, label: "Email", value: "contact@roompe.co.in", href: "mailto:contact@roompe.co.in" },
+                    { icon: Mail, label: "Email", value: "satya@roompe.co.in", href: "mailto:satya@roompe.co.in" },
                     { icon: Phone, label: "Phone", value: "+91 93282 27697", href: "tel:+919328227697" },
                     { icon: MapPin, label: "Location", value: "Ahmedabad, Gujarat, India", href: "#" },
                   ].map(({ icon: Icon, label, value, href }) => (

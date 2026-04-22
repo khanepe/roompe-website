@@ -730,15 +730,15 @@ export default function Home() {
                 <Link href="/contact" className="btn-gold">
                   Schedule a Conversation <ArrowUpRight size={16} />
                 </Link>
-                <a href="tel:+919876543210" className="btn-outline-mint">
+                <a href="tel:+919328227697" className="btn-outline-mint">
                   <Phone size={15} /> Call Us Directly
                 </a>
               </div>
 
               <div className="flex flex-col gap-3 pt-8" style={{ borderTop: "1px solid #E2E8F0" }}>
                 {[
-                  { icon: Mail, text: "hello@roompe.co.in", href: "mailto:hello@roompe.co.in" },
-                  { icon: Phone, text: "+91 98765 43210", href: "tel:+919876543210" },
+                  { icon: Mail, text: "satya@roompe.co.in", href: "mailto:satya@roompe.co.in" },
+                  { icon: Phone, text: "+91 93282 27697", href: "tel:+919328227697" },
                   { icon: MapPin, text: "Ahmedabad, Gujarat, India", href: "#" },
                 ].map(({ icon: Icon, text, href }) => (
                   <a key={text} href={href} className="flex items-center gap-3 text-sm text-[#718096] hover:text-[#4BA18F] transition-colors group">
