@@ -20,7 +20,7 @@ const LINKS = {
 };
 
 const CONTACT = [
-  { icon: Mail, label: "contact@roompe.co.in", href: "mailto:contact@roompe.co.in" },
+  { icon: Mail, label: "satya@roompe.co.in", href: "mailto:satya@roompe.co.in" },
   { icon: Phone, label: "+91 93282 27697", href: "tel:+919328227697" },
   { icon: MapPin, label: "Ahmedabad, Gujarat, India", href: "#" },
 ];
