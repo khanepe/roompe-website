@@ -12,9 +12,10 @@ import {
 } from "lucide-react";
 
 /* ─── Animation presets ──────────────────────────────────────── */
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
 };
 const stagger = {
   hidden: {},
@@ -153,7 +154,7 @@ function PhoneMockup() {
       initial={{ opacity: 0, scale: 0.92, y: 24 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.7, ease: EASE }}
       className="relative flex justify-center items-center"
     >
       {/* Glow */}
@@ -714,7 +715,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.65, ease: EASE }}
             >
               <SectionLabel text="Partner With Us" />
               <h2 className="display-lg text-[#12323B] mb-5">
@@ -755,7 +756,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              transition={{ duration: 0.65, ease: EASE, delay: 0.1 }}
               className="rounded-3xl overflow-hidden"
               style={{ background: "#12323B" }}
             >
