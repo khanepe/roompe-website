@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://roompe.co.in"),
   title: "RoomPe | Premium Student Housing Management",
   description: "Western India's premier B2B student housing partner. We transform hostel infrastructure into seamless, tech-enabled experiences for universities and institutions across Gujarat.",
   keywords: ["student housing", "hostel management", "B2B proptech", "Gujarat", "RoomPe", "campus living"],
