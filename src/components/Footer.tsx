@@ -9,6 +9,7 @@ const LINKS = {
     { name: "About RoomPe", href: "/#about" },
     { name: "Our Models", href: "/#services" },
     { name: "Technology", href: "/#technology" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Partner With Us", href: "/contact" },
   ],
   services: [
